@@ -1,0 +1,19 @@
+<html>
+    <title>Automatic QR Code</title>
+<script>
+    let u = window.location;
+    window.onload = () => {
+        let x = document.getElementsByTagName('code');
+        for (var i = 0; i < x.length; i++) {
+            var res = x[i].innerHTML.replace(/\{localhost:3000\}/gi, window.location.host);
+            x[i].innerHTML = res;
+        }
+    }
+</script>
+<link rel="stylesheet" href="/static/screen.css" />
+<body>
+    <main>
+        {content}
+    </main>
+    </body>
+</html>

@@ -1,0 +1,89 @@
+body {
+	margin: 1em auto;
+	padding: 0 1ex;
+	max-width: 120ex;
+	min-width: 60ex;;
+	background-color: lightgrey;
+}
+main img:first-child {
+	position:initial;
+		display: block;
+		text-align: center;
+		margin: 0 auto;
+}
+
+pre {
+	background-color: black;
+	color: white;
+	padding: 7px 10px;
+	white-space: pre-line;
+}
+
+main {
+  /* // fixes webkit rendering bug for some: see #538 */
+  -webkit-transform: translateZ(0);
+  /* // to place content above the dark box */
+  position: relative;
+  z-index: 30;
+}
+
+main:after {
+	content: '';
+	display: block;
+	clear: both;
+}
+
+.example { 
+	display: block;
+	margin: 5px auto;
+	border: 2px solid turquoise;
+	padding: 3px;
+}
+.example[src$="scale=1"]:active,
+.example[src$="scale=1"]:hover,
+.example[src$="scale=1"]:focus {
+	zoom: 8;
+}
+
+@media (max-width: 400px) {
+	body {
+		font-size: 80%`;
+	}
+}
+@media (min-width: 90ex) {
+	main > p:first-of-type {
+		/* position: fixed; */
+		float: right;
+		margin: -4em 0 0 0 ;
+	}
+	main>h1, main>h2, main>h3, main>h4, main>h5, main>h6, main>p, main>table, main>ul, main>ol, main>aside, main>dl {
+		margin-right: 50%;
+		box-sizing: border-box;
+		display: block;
+		padding-right: 1ex;
+	}
+
+	main>ul, main>ol {
+		padding-left: 25px;
+	}
+
+	main>h1, main>h2, main>h3 {
+		clear:both;
+	}
+
+	main pre,
+	main blockquote {
+		box-sizing: border-box;
+		width: 50%;
+		float:right;
+		clear: right;
+		margin-top: 0em;
+	}
+
+	.example { 
+		display: inline;
+		margin: 2px;
+		vertical-align: top;
+	}
+
+}

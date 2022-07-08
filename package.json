@@ -4,8 +4,9 @@
   "description": "Automatic embeddable qr for \"current\" page",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js"
+    "build": "node build.js",
+    "dev": "nodemon server.js",
+    "start": "node server.js"
   },
   "keywords": [
     "qr-code"
@@ -15,8 +16,18 @@
   "dependencies": {
     "@fastify/static": "^6.4.0",
     "fastify": "^4.2.0",
-    "nodemon": "^2.0.19",
     "qrcode": "^1.5.0"
   },
-  "type": "module"
+  "type": "module",
+  "devDependencies": {
+    "marked": "^4.0.18",
+    "nodemon": "^2.0.19"
+  },
+  "nodemonConfig": {
+    "events": {
+      "restart": "echo rebuild; node build.js"
+    },
+    "ext": "js,html,css,json,md",
+    "ignore": "static/index.html"
+  }
 }
