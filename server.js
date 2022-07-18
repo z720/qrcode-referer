@@ -1,7 +1,7 @@
 // Basic dependencies
 import Fastify from 'fastify';
 
-// App componenet
+// App component
 import { logger } from './lib/logger.js'
 import { service as qrService } from './lib/qr-code.js';
 import { service as healthcheck} from './lib/healthcheck.js';
@@ -16,9 +16,10 @@ const fastify = Fastify({
 fastify.register(content)
 fastify.register(healthcheck, { prefix: '/healthcheck' });
 fastify.register(qrService, { prefix: '/qrcode' });
+fastify.register(qrService, { prefix: '/v1' });
 
 // Run the server!
-fastify.listen({ port: PORT }, function (err, address) {
+fastify.listen({ port: PORT, host: '0.0.0.0' }, function (err, address) {
   if (err) {
     fastify.log.error(err)
     process.exit(1)

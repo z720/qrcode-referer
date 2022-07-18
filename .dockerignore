@@ -1,11 +1,11 @@
-**/*.log
 **/node_modules/
+**/.git
+**/LICENSE
 **/.vscode
 **/npm-debug.log
 **/coverage
 **/.env
 **/.editorconfig
 **/.aws
+**/.github
 **/dist
-
-static/index.html
