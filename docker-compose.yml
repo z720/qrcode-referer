@@ -1,0 +1,19 @@
+version: "3"
+services:
+  qrcode-service:
+    container_name: qrcode-service
+    domainname: ${DOMAIN}
+    environment:
+      - VIRTUAL_HOST=${DOMAIN}
+      - LETSENCRYPT_HOST=${DOMAIN}
+      - LETSENCRYPT_EMAIL=letsencrypt@${DOMAIN}
+    expose:
+      - 8080/tcp
+    hostname: ${DOMAIN}
+    image: ghcr.io/z720/qrcode-referer:develop
+    networks:
+      - internet
+networks:
+  internet:
+    external: true
+    name: ${EXTERNAL_NETWORK}
