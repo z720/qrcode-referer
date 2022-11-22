@@ -1,6 +1,6 @@
 {
   "name": "qr-code-service",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Automatic embeddable qr for \"current\" page",
   "main": "index.js",
   "scripts": {
