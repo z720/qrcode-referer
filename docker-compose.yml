@@ -10,7 +10,7 @@ services:
     expose:
       - 8080/tcp
     hostname: ${DOMAIN}
-    image: ghcr.io/z720/qrcode-referer:develop
+    image: ghcr.io/z720/qrcode-referer:${VERSION:-develop}
     networks:
       - internet
 networks:
