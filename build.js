@@ -1,5 +1,7 @@
 import {marked} from 'marked';
 import {readFile, writeFile} from 'fs/promises';
+import packageJSON from './package.json' assert {type: 'json'};
+
 
 function convert(c) {
 	return new Promise((resolve, reject) => {
@@ -12,6 +14,8 @@ Promise.all([
 	readFile('layout.html')
 ]).then(([ content, tpl]) => {
 	// let content = res[0], tpl = res[1];
-	let output = String(tpl).replace('{content}', content);
+	let output = String(tpl)
+			.replace('{version}', packageJSON.version)
+			.replace('{content}', content);
 	return writeFile('static/index.html', output);
 })
