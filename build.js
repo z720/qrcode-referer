@@ -1,6 +1,6 @@
 import {marked} from 'marked';
 import {readFile, writeFile} from 'fs/promises';
-import packageJSON from './package.json' assert {type: 'json'};
+import packageJSON from './package.json' with {type: 'json'};
 
 
 function convert(c) {
