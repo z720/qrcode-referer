@@ -1,6 +1,6 @@
 version: "3"
 services:
-  qrcode-service:
+  api:
     container_name: qrcode-service
     domainname: ${DOMAIN}
     environment:
@@ -10,7 +10,13 @@ services:
     expose:
       - 8080/tcp
     hostname: ${DOMAIN}
-    image: ghcr.io/z720/qrcode-referer:develop
+    image: ghcr.io/z720/qrcode-referer:${VERSION:-develop}
+    labels:
+    - traefik.enable=true
+    - traefik.http.routers.qrcode-service.rule=Host(`${DOMAIN}`)
+    - traefik.http.routers.qrcode-service.entrypoints=websecure
+    - traefik.http.routers.qrcode-service.tls=true
+    - traefik.http.routers.qrcode-service.tls.certresolver=letsencrypt  
     networks:
       - internet
 networks:

@@ -10,7 +10,7 @@ import { service as content } from './lib/content.js'
 const PORT = process.env.PORT || 3000;
 
 const fastify = Fastify({
-	logger,
+	loggerInstance: logger,
   trustProxy: true
 });
 
