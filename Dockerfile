@@ -5,7 +5,7 @@ COPY . .
 RUN npm install
 RUN npm run build
 
-FROM node:16-slim
+FROM node:22-slim
 ENV NODE_ENV=production
 WORKDIR /app
 RUN mkdir -p ./logs
