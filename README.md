@@ -57,3 +57,7 @@ Example scale 1px:
 
 <img class="example" src="https://qr.api.z720.net/qrcode?scale=1" alt="QR Code with 1px squares"/>
 
+## Disclaimer
+
+This service uses the [referer header](https://en.wikipedia.org/wiki/HTTP_referer) to determine the page its actually used. It means that if the page is rendered behind a proxy, it might not work...
+_Example:_ [Github is not rendering image](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/about-anonymized-urls) directly when parsing markdown, it means that README is Github repo won't actually render the QR Code.
