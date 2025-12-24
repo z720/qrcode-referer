@@ -1,4 +1,4 @@
-# Qr Code as a Service 
+# [Qr Code as a Service](https://qr.api.z720.net/) 
 
 ![QR Code for this page](https://qr.api.z720.net/qrcode)
 

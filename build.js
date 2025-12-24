@@ -2,7 +2,6 @@ import {marked} from 'marked';
 import {readFile, writeFile} from 'fs/promises';
 import packageJSON from './package.json' with {type: 'json'};
 
-
 function convert(c) {
 	return new Promise((resolve, reject) => {
 		resolve(marked.parse(String(c)));
