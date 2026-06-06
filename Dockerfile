@@ -1,11 +1,11 @@
-FROM node:25 AS build
+FROM node:26 AS build
 ENV NODE_ENV=development
 WORKDIR /app
 COPY . .
 RUN npm install
 RUN npm run build
 
-FROM node:25-slim
+FROM node:26-slim
 ENV NODE_ENV=production
 WORKDIR /app
 RUN mkdir -p ./logs
